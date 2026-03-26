@@ -573,6 +573,223 @@
     }
 
     /* ══════════════════════════════════════════
+       PRESENTER PANEL (inline right side)
+    ══════════════════════════════════════════ */
+    .presenter-panel {
+      position: fixed;
+      top: 0;
+      right: -420px;
+      width: 420px;
+      height: 100vh;
+      background: #0d1b2a;
+      color: #E1EEFA;
+      z-index: 2000;
+      display: flex;
+      flex-direction: column;
+      transition: right 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+      box-shadow: -4px 0 24px rgba(0,0,0,0.3);
+      font-family: var(--font-body);
+      font-size: 13px;
+      line-height: 1.5;
+    }
+
+    .presenter-panel.open {
+      right: 0;
+    }
+
+    .pp-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 16px;
+      background: #1F3B63;
+      border-bottom: 2px solid #027F7E;
+      flex-shrink: 0;
+    }
+
+    .pp-header-left {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .pp-badge {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #43C0BE;
+    }
+
+    .pp-slide-count {
+      font-size: 12px;
+      color: rgba(255,255,255,0.5);
+      font-weight: 500;
+    }
+
+    .pp-close {
+      background: none;
+      border: 1px solid rgba(255,255,255,0.2);
+      color: #fff;
+      font-size: 18px;
+      width: 28px;
+      height: 28px;
+      border-radius: 6px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s;
+    }
+
+    .pp-close:hover {
+      background: rgba(255,255,255,0.1);
+    }
+
+    .pp-content {
+      flex: 1;
+      overflow-y: auto;
+      padding: 0;
+    }
+
+    .pp-onscreen {
+      background: #1a2d47;
+      padding: 14px 16px;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .pp-onscreen-label {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: #43C0BE;
+      margin-bottom: 4px;
+    }
+
+    .pp-onscreen-title {
+      font-family: var(--font-heading);
+      font-size: 18px;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 2px;
+    }
+
+    .pp-onscreen-desc {
+      font-size: 12px;
+      color: rgba(255,255,255,0.4);
+    }
+
+    .pp-section {
+      padding: 14px 16px;
+      border-bottom: 1px solid rgba(255,255,255,0.04);
+    }
+
+    .pp-section-label {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    .pp-section-label.script { color: #43C0BE; }
+    .pp-section-label.pivots { color: #D4A537; }
+    .pp-section-label.ask { color: #E07B5E; }
+
+    .pp-script-text {
+      font-size: 14px;
+      line-height: 1.7;
+      color: rgba(255,255,255,0.9);
+    }
+
+    .pp-script-text b {
+      color: #43C0BE;
+    }
+
+    .pp-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .pp-list li {
+      padding: 5px 0 5px 14px;
+      position: relative;
+      font-size: 12px;
+      color: rgba(255,255,255,0.7);
+    }
+
+    .pp-list li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 11px;
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+    }
+
+    .pp-list.pivots li::before { background: #D4A537; }
+    .pp-list.ask li::before { background: #E07B5E; }
+
+    .pp-next-up {
+      padding: 10px 16px;
+      font-size: 11px;
+      color: rgba(255,255,255,0.3);
+      border-bottom: 1px solid rgba(255,255,255,0.04);
+    }
+
+    .pp-next-up span {
+      font-weight: 600;
+      color: rgba(255,255,255,0.5);
+    }
+
+    .pp-nav {
+      display: flex;
+      gap: 1px;
+      flex-shrink: 0;
+      background: rgba(255,255,255,0.05);
+    }
+
+    .pp-nav-btn {
+      flex: 1;
+      padding: 14px;
+      background: #1F3B63;
+      border: none;
+      color: #fff;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s;
+      font-family: var(--font-body);
+      letter-spacing: 0.5px;
+    }
+
+    .pp-nav-btn:hover {
+      background: #027F7E;
+    }
+
+    /* When panel is open, shrink the deck */
+    body.presenter-active .deck {
+      margin-right: 420px;
+      transition: margin-right 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    body.presenter-active .fixed-nav {
+      right: 420px;
+      transition: right 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    body.presenter-active .progress-dots {
+      right: 444px;
+    }
+
+    body.presenter-active .slide-counter {
+      right: 444px;
+    }
+
+    /* ══════════════════════════════════════════
        SECTION 4 — OPPORTUNITY
     ══════════════════════════════════════════ */
     #opportunity {
@@ -1795,8 +2012,8 @@
 
           <div class="discovery-prompts">
             <div class="discovery-prompt">How's your business tracking this year?</div>
+            <div class="discovery-prompt">Can you give us an overview of your current business operations?</div>
             <div class="discovery-prompt">What does your ideal business look like in 12 months?</div>
-            <div class="discovery-prompt">What's the most frustrating part of your week?</div>
             <div class="discovery-prompt">Have you ever considered diversifying beyond NDIS?</div>
           </div>
 
@@ -2295,6 +2512,24 @@
 
   </div><!-- /.deck -->
 
+  <!-- ── Presenter Panel (inline, right side) ── -->
+  <div class="presenter-panel" id="presenterPanel">
+    <div class="pp-header">
+      <div class="pp-header-left">
+        <span class="pp-badge">PRESENTER VIEW</span>
+        <span class="pp-slide-count" id="ppSlideCount">1 / 13</span>
+      </div>
+      <button class="pp-close" id="ppClose">&times;</button>
+    </div>
+    <div class="pp-content" id="ppContent">
+      <div class="pp-loading">Press Present or P to activate</div>
+    </div>
+    <div class="pp-nav">
+      <button class="pp-nav-btn" id="ppPrev">&larr; PREV</button>
+      <button class="pp-nav-btn" id="ppNext">NEXT &rarr;</button>
+    </div>
+  </div>
+
   <!-- ══════════════════════════════════════════════════
        JAVASCRIPT
   ══════════════════════════════════════════════════ -->
@@ -2302,12 +2537,14 @@
     (function () {
       const deck = document.getElementById('deck');
       const nav = document.getElementById('mainNav');
+      const panel = document.getElementById('presenterPanel');
+      const ppContent = document.getElementById('ppContent');
+      const ppCount = document.getElementById('ppSlideCount');
       const dots = document.querySelectorAll('.progress-dot');
       const sections = deck.querySelectorAll('section');
       const counter = document.getElementById('slideCounter');
       const total = sections.length;
-      let presenterWin = null;
-      const channel = new BroadcastChannel('deck-presenter');
+      let presenterOpen = false;
 
       // ── Presenter Notes Data ──
       const NOTES = {
@@ -2442,48 +2679,54 @@
         counter.classList.toggle('on-dark', isDark);
         document.querySelector('.progress-dots')?.classList.toggle('on-dark', isDark);
 
-        // Sync presenter via BroadcastChannel
-        if (presenterWin && !presenterWin.closed) {
+        // Sync presenter panel
+        if (presenterOpen) {
           const notes = NOTES[currentId];
           const nextIdx = idx + 1;
           const nextId = slideIds[nextIdx];
           const nextNotes = NOTES[nextId];
-          channel.postMessage({
-            type: 'slideUpdate',
-            index: idx,
-            id: currentId,
-            total: total,
-            notes: notes || null,
-            nextSlideTitle: nextNotes ? nextNotes.title : null
-          });
+          updatePresenterPanel(idx, currentId, notes, nextNotes);
         }
       }
 
-      // ── SINGLE channel listener on main deck side ──
-      channel.addEventListener('message', (e) => {
-        const msg = e.data;
-        if (msg.type === 'navigate') {
-          // Popup requested navigation
-          const targetIdx = Math.max(0, Math.min(msg.index, total - 1));
-          sections[targetIdx]?.scrollIntoView({ behavior: 'smooth' });
-        } else if (msg.type === 'requestSlide') {
-          // Popup asking for current state (e.g. on initial load)
-          const idx = getCurrentSlide();
-          const currentId = sections[idx]?.id;
-          const notes = NOTES[currentId];
-          const nextIdx = idx + 1;
-          const nextId = slideIds[nextIdx];
-          const nextNotes = NOTES[nextId];
-          channel.postMessage({
-            type: 'slideUpdate',
-            index: idx,
-            id: currentId,
-            total: total,
-            notes: notes || null,
-            nextSlideTitle: nextNotes ? nextNotes.title : null
-          });
+      function updatePresenterPanel(idx, id, notes, nextNotes) {
+        ppCount.textContent = `${idx + 1} / ${total}`;
+        if (!notes) { ppContent.innerHTML = '<div style="padding:20px;color:rgba(255,255,255,0.3);">No notes for this slide</div>'; return; }
+
+        let html = '';
+        // On Screen
+        html += `<div class="pp-onscreen">
+          <div class="pp-onscreen-label">ON SCREEN</div>
+          <div class="pp-onscreen-title">${notes.title}</div>
+          <div class="pp-onscreen-desc">${notes.onScreen || ''}</div>
+        </div>`;
+        // Script
+        html += `<div class="pp-section">
+          <div class="pp-section-label script">YOUR SCRIPT</div>
+          <div class="pp-script-text">${notes.script || ''}</div>
+        </div>`;
+        // Pivots
+        if (notes.pivots && notes.pivots.length) {
+          html += `<div class="pp-section">
+            <div class="pp-section-label pivots">PIVOT PHRASES</div>
+            <ul class="pp-list pivots">${notes.pivots.map(p => `<li>${p}</li>`).join('')}</ul>
+          </div>`;
         }
-      });
+        // If they ask
+        if (notes.ifTheyAsk && notes.ifTheyAsk.length) {
+          html += `<div class="pp-section">
+            <div class="pp-section-label ask">IF THEY ASK</div>
+            <ul class="pp-list ask">${notes.ifTheyAsk.map(q => `<li>${q}</li>`).join('')}</ul>
+          </div>`;
+        }
+        // Next up
+        if (nextNotes) {
+          html += `<div class="pp-next-up"><span>NEXT UP:</span> ${nextNotes.title}</div>`;
+        }
+
+        ppContent.innerHTML = html;
+        ppContent.scrollTop = 0;
+      }
 
       // Scroll handler
       let ticking = false;
@@ -2515,193 +2758,25 @@
         }
       });
 
-      // Presenter mode
+      // Presenter panel toggle
       function togglePresenter() {
-        if (presenterWin && !presenterWin.closed) {
-          presenterWin.close();
-          presenterWin = null;
-          document.getElementById('presenterBtn')?.classList.remove('active');
-        } else {
-          openPresenter();
-        }
+        presenterOpen = !presenterOpen;
+        panel.classList.toggle('open', presenterOpen);
+        document.body.classList.toggle('presenter-active', presenterOpen);
+        document.getElementById('presenterBtn')?.classList.toggle('active', presenterOpen);
+        if (presenterOpen) updateState(); // refresh notes
       }
 
-      function openPresenter() {
-        presenterWin = window.open('', 'presenterNotes', 'width=520,height=800,left=50,top=50,scrollbars=yes');
-        if (!presenterWin) { alert('Please allow popups for presenter mode.'); return; }
-        document.getElementById('presenterBtn')?.classList.add('active');
-
-        presenterWin.document.write(`<!DOCTYPE html><html><head>
-          <title>Presenter View</title>
-          <link href="https://fonts.googleapis.com/css2?family=Roboto+Flex:wght@400;500;600;700&family=Roboto+Serif:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
-          <style>
-            * { margin:0; padding:0; box-sizing:border-box; }
-            body { font-family:'Roboto Flex',system-ui,sans-serif; background:#0a1929; color:#E1EEFA; font-size:14px; line-height:1.6; padding:0; display:flex; flex-direction:column; height:100vh; }
-            .header { background:#1F3B63; padding:10px 20px; display:flex; justify-content:space-between; align-items:center; flex-shrink:0; border-bottom:2px solid #027F7E; }
-            .header-left { display:flex; align-items:center; gap:12px; }
-            .header h1 { font-size:13px; font-weight:600; letter-spacing:1.5px; text-transform:uppercase; color:#43C0BE; }
-            .slide-counter { font-size:13px; color:rgba(255,255,255,0.6); font-weight:500; }
-            .header .close-btn { background:none; border:1px solid rgba(224,123,94,0.4); color:#E07B5E; font-size:13px; cursor:pointer; padding:4px 12px; border-radius:6px; transition:all 0.2s; }
-            .header .close-btn:hover { background:rgba(224,123,94,0.15); }
-
-            .screen-preview { background:#142744; padding:14px 20px; border-bottom:1px solid rgba(255,255,255,0.08); flex-shrink:0; }
-            .screen-label { font-size:10px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:#5b9bd5; margin-bottom:6px; }
-            .screen-title { font-family:'Roboto Serif',serif; font-size:20px; font-weight:700; color:#fff; margin-bottom:4px; }
-            .screen-desc { font-size:13px; color:rgba(255,255,255,0.55); line-height:1.4; }
-
-            .content-scroll { flex:1; overflow-y:auto; }
-
-            .script-section { padding:18px 20px; border-bottom:1px solid rgba(255,255,255,0.06); }
-            .section-label { font-size:10px; font-weight:700; letter-spacing:2px; text-transform:uppercase; margin-bottom:10px; display:flex; align-items:center; gap:6px; }
-            .section-label.script-label { color:#43C0BE; }
-            .script-text { font-size:15px; line-height:1.7; color:rgba(255,255,255,0.92); }
-            .script-text b { color:#43C0BE; font-weight:600; }
-
-            .pivot-section { padding:14px 20px; border-bottom:1px solid rgba(255,255,255,0.06); }
-            .section-label.pivot-label { color:#43C0BE; }
-            .pivot-list { list-style:none; padding:0; }
-            .pivot-list li { padding:5px 0 5px 14px; position:relative; font-size:13px; line-height:1.5; color:rgba(255,255,255,0.75); }
-            .pivot-list li::before { content:''; position:absolute; left:0; top:11px; width:5px; height:5px; border-radius:50%; background:#43C0BE; }
-
-            .ask-section { padding:14px 20px; border-bottom:1px solid rgba(255,255,255,0.06); }
-            .section-label.ask-label { color:#D4A537; }
-            .ask-list { list-style:none; padding:0; }
-            .ask-list li { padding:5px 0 5px 14px; position:relative; font-size:13px; line-height:1.5; color:rgba(255,255,255,0.75); }
-            .ask-list li::before { content:''; position:absolute; left:0; top:11px; width:5px; height:5px; border-radius:50%; background:#D4A537; }
-
-            .next-section { padding:10px 20px; border-bottom:1px solid rgba(255,255,255,0.06); flex-shrink:0; }
-            .next-label { font-size:10px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:rgba(255,255,255,0.35); }
-            .next-value { font-size:13px; color:rgba(255,255,255,0.5); margin-top:2px; }
-
-            .nav-btns { display:flex; gap:8px; padding:12px 20px; flex-shrink:0; background:#0a1929; border-top:1px solid rgba(255,255,255,0.1); }
-            .nav-btn { flex:1; padding:12px; border:1px solid rgba(255,255,255,0.2); background:none; color:#fff; border-radius:8px; cursor:pointer; font-size:14px; font-weight:600; transition:all 0.2s; }
-            .nav-btn:hover { background:rgba(67,192,190,0.15); border-color:#43C0BE; }
-            .nav-btn:active { background:rgba(67,192,190,0.25); }
-
-            .empty-state { padding:40px 20px; text-align:center; color:rgba(255,255,255,0.4); font-size:15px; }
-          </style>
-        </head><body>
-          <div class="header">
-            <div class="header-left">
-              <h1>Presenter View</h1>
-              <span class="slide-counter" id="slideCounter"></span>
-            </div>
-            <button class="close-btn" onclick="window.close()">Close</button>
-          </div>
-          <div class="content-scroll" id="contentScroll">
-            <div id="screenPreview" class="screen-preview"></div>
-            <div id="scriptSection"></div>
-            <div id="pivotSection"></div>
-            <div id="askSection"></div>
-            <div id="nextSection" class="next-section"></div>
-          </div>
-          <div class="nav-btns">
-            <button class="nav-btn" id="prevBtn">&larr; PREV</button>
-            <button class="nav-btn" id="nextBtn">NEXT &rarr;</button>
-          </div>
-          <script>
-            const ch = new BroadcastChannel('deck-presenter');
-            let currentIdx = 0;
-            let totalSlides = 0;
-
-            // SINGLE channel listener on popup side
-            ch.addEventListener('message', function(e) {
-              var msg = e.data;
-              if (msg.type === 'slideUpdate') {
-                currentIdx = msg.index;
-                totalSlides = msg.total;
-                renderSlide(msg);
-              }
-            });
-
-            document.getElementById('prevBtn').addEventListener('click', function() {
-              ch.postMessage({ type: 'navigate', index: Math.max(0, currentIdx - 1) });
-            });
-            document.getElementById('nextBtn').addEventListener('click', function() {
-              ch.postMessage({ type: 'navigate', index: Math.min(totalSlides - 1, currentIdx + 1) });
-            });
-
-            function renderSlide(msg) {
-              var n = msg.notes;
-              // Counter
-              document.getElementById('slideCounter').textContent = '[' + (msg.index + 1) + '/' + msg.total + ']';
-
-              // Screen preview
-              var sp = document.getElementById('screenPreview');
-              if (n) {
-                sp.innerHTML = '<div class="screen-label">ON SCREEN</div>' +
-                  '<div class="screen-title">' + n.title + '</div>' +
-                  '<div class="screen-desc">' + (n.onScreen || '') + '</div>';
-              } else {
-                sp.innerHTML = '<div class="screen-label">ON SCREEN</div><div class="screen-title">Slide ' + (msg.index + 1) + '</div>';
-              }
-
-              // Script
-              var ss = document.getElementById('scriptSection');
-              if (n && n.script) {
-                ss.innerHTML = '<div class="script-section"><div class="section-label script-label">YOUR SCRIPT</div><div class="script-text">' + n.script + '</div></div>';
-              } else {
-                ss.innerHTML = '<div class="script-section"><div class="section-label script-label">YOUR SCRIPT</div><div class="script-text" style="color:rgba(255,255,255,0.4);">No script for this slide.</div></div>';
-              }
-
-              // Pivots
-              var ps = document.getElementById('pivotSection');
-              if (n && n.pivots && n.pivots.length > 0) {
-                var ph = '<div class="pivot-section"><div class="section-label pivot-label">PIVOT PHRASES</div><ul class="pivot-list">';
-                n.pivots.forEach(function(p) { ph += '<li>' + p + '</li>'; });
-                ph += '</ul></div>';
-                ps.innerHTML = ph;
-              } else {
-                ps.innerHTML = '';
-              }
-
-              // If they ask
-              var as = document.getElementById('askSection');
-              if (n && n.ifTheyAsk && n.ifTheyAsk.length > 0) {
-                var ah = '<div class="ask-section"><div class="section-label ask-label">IF THEY ASK</div><ul class="ask-list">';
-                n.ifTheyAsk.forEach(function(q) { ah += '<li>' + q + '</li>'; });
-                ah += '</ul></div>';
-                as.innerHTML = ah;
-              } else {
-                as.innerHTML = '';
-              }
-
-              // Next up
-              var ns = document.getElementById('nextSection');
-              if (msg.nextSlideTitle) {
-                ns.innerHTML = '<div class="next-label">NEXT UP</div><div class="next-value">' + (n ? n.nextUp || msg.nextSlideTitle : msg.nextSlideTitle) + '</div>';
-              } else {
-                ns.innerHTML = '<div class="next-label">NEXT UP</div><div class="next-value">End of presentation</div>';
-              }
-
-              // Scroll content back to top
-              document.getElementById('contentScroll').scrollTop = 0;
-            }
-
-            // Request current slide on load
-            ch.postMessage({ type: 'requestSlide' });
-          <\/script>
-        </body></html>`);
-        presenterWin.document.close();
-
-        // Send initial slide data after a brief delay for the popup to initialize
-        setTimeout(() => {
-          const idx = getCurrentSlide();
-          const currentId = sections[idx]?.id;
-          const notes = NOTES[currentId];
-          const nextIdx = idx + 1;
-          const nextId = slideIds[nextIdx];
-          const nextNotes = NOTES[nextId];
-          channel.postMessage({
-            type: 'slideUpdate',
-            index: idx,
-            id: currentId,
-            total: total,
-            notes: notes || null,
-            nextSlideTitle: nextNotes ? nextNotes.title : null
-          });
-        }, 600);
-      }
+      // Panel nav buttons
+      document.getElementById('ppPrev')?.addEventListener('click', () => {
+        const idx = getCurrentSlide();
+        sections[Math.max(idx - 1, 0)]?.scrollIntoView({ behavior: 'smooth' });
+      });
+      document.getElementById('ppNext')?.addEventListener('click', () => {
+        const idx = getCurrentSlide();
+        sections[Math.min(idx + 1, total - 1)]?.scrollIntoView({ behavior: 'smooth' });
+      });
+      document.getElementById('ppClose')?.addEventListener('click', togglePresenter);
 
       // Present button
       document.getElementById('presenterBtn')?.addEventListener('click', togglePresenter);
