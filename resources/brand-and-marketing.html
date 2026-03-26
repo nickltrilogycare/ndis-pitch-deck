@@ -452,18 +452,28 @@
     .next-resources a svg { width: 16px; height: 16px; flex-shrink: 0; }
 
     /* ── Responsive ── */
-    @media (max-width: 700px) {
-      .hero { padding: 60px 20px 48px; }
-      .hero h1 { font-size: 32px; }
-      .content { padding: 40px 18px 60px; }
-      h2 { font-size: 24px; }
+    @media (max-width: 768px) {
+      .top-nav { padding: 10px 16px; }
+      .top-nav img { height: 24px; }
+      .hero { padding: 80px 24px 32px; }
+      .hero h1 { font-size: 24px; }
+      .content { padding: 24px 20px 60px; max-width: 100%; }
+      h2 { font-size: 22px; }
+      h3 { font-size: 17px; }
+      table { font-size: 12px; }
+      thead th, tbody td { padding: 8px 10px; }
+      .template-box { padding: 16px; font-size: 13px; }
+      .callout { padding: 16px; }
       .social-grid { grid-template-columns: 1fr; }
       .brochure-mock { grid-template-columns: 1fr; }
       .email-banner-mock { flex-direction: column; text-align: center; }
+      .bottom-actions { flex-direction: column; gap: 12px; }
+      .contact-card { padding: 24px 20px; }
     }
 
     /* ── Print ── */
     @media print {
+      @page { size: A4; margin: 20mm; }
       .top-nav, .btn-pdf, .bottom-actions, .next-resources { display: none !important; }
       .hero { margin-top: 0; padding: 40px 20px; }
       .content { padding: 20px 0; }
@@ -474,8 +484,10 @@
       .table-wrap { break-inside: avoid; }
       .callout { break-inside: avoid; }
       .template-box { break-inside: avoid; }
+      tr { break-inside: avoid; }
       h2 { break-after: avoid; }
       .bottom-section { border-top: none; margin-top: 24px; padding-top: 0; }
+      * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
     }
   </style>
 </head>
@@ -625,7 +637,7 @@
     <div class="template-box">
       <span class="copy-hint">Copy &amp; paste</span>
       <div class="template-label">LinkedIn Post 4 &mdash; Industry Growth</div>
-      <p>The aged care sector is growing fast &mdash; 83,000 new home care places being released right now. I'm proud to be part of the solution, coordinating care for older Australians through Trilogy Care. #supportathome</p>
+      <p>The aged care sector is growing fast &mdash; Thousands of new home care places are being released across Australia. I'm proud to be part of the solution, coordinating care for older Australians through Trilogy Care. #supportathome</p>
     </div>
 
     <div class="template-box">
@@ -722,36 +734,8 @@
       <p><strong>support at home coordinator</strong> &middot; <strong>aged care coordination</strong> &middot; <strong>home care provider</strong> &middot; <strong>support at home services [your suburb/region]</strong> &middot; <strong>trilogy care partner</strong></p>
     </div>
 
-    <h2>Marketing Support by Tier</h2>
-
-    <div class="table-wrap">
-      <table>
-        <thead>
-          <tr>
-            <th>Tier</th>
-            <th>Marketing Support You Receive</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><strong>Bronze</strong><br><span style="font-size: 13px; color: #9CA3AF;">0&ndash;10 clients</span></td>
-            <td>Co-branded brochure, social tiles, approved messaging, marketing approval support</td>
-          </tr>
-          <tr>
-            <td><strong>Silver</strong><br><span style="font-size: 13px; color: #9CA3AF;">11&ndash;25 clients</span></td>
-            <td>Bronze + featured listing on Trilogy partner page, quarterly marketing review</td>
-          </tr>
-          <tr>
-            <td><strong>Gold</strong><br><span style="font-size: 13px; color: #9CA3AF;">26&ndash;50 clients</span></td>
-            <td>Silver + dedicated marketing support, priority collateral, co-branded materials</td>
-          </tr>
-          <tr>
-            <td><strong>Platinum</strong><br><span style="font-size: 13px; color: #9CA3AF;">50+ clients</span></td>
-            <td>Gold + social media management, event support, content creation, speaking opportunities</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
+    <h2>Marketing Support That Scales</h2>
+    <p>Your marketing support grows alongside your business. Early on, you'll receive your co-branded brochure, social media toolkit, and approved messaging framework. As your portfolio expands, additional marketing resources become available — from dedicated marketing reviews to co-branded campaign support. Your Partnership Growth Consultant will guide you through what's available at each stage.</p>
 
     <h2>Marketing Approval Process</h2>
     <p>All references to Trilogy Care must be approved before publishing. This includes:</p>

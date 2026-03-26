@@ -277,12 +277,29 @@
       .card-grid { grid-template-columns: repeat(2, 1fr); }
     }
 
-    @media (max-width: 600px) {
-      .card-grid { grid-template-columns: 1fr; }
-      .hero h1 { font-size: 28px; }
+    @media (max-width: 768px) {
+      .hero { padding: 80px 24px 40px; }
+      .hero h1 { font-size: 26px; }
       .hero p { font-size: 16px; }
+      .card-grid { grid-template-columns: 1fr; }
+      .filter-inner { flex-wrap: wrap; gap: 8px; }
+      .filter-pill { font-size: 11px; padding: 6px 14px; }
+      .filter-section { padding: 16px 20px; }
+      .nav-inner { padding: 0 20px; height: 56px; }
+      .nav-logo img { height: 24px; }
       .nav-subtitle { display: none; }
       .nav-divider { display: none; }
+      .grid-section { padding: 24px 20px 60px; }
+      .card-grid { gap: 16px; }
+      .stat-pills { gap: 8px; }
+      .stat-pill { font-size: 12px; padding: 6px 14px; }
+      .nav-back { font-size: 12px; }
+    }
+
+    @media (max-width: 600px) {
+      .hero h1 { font-size: 24px; }
+      .card-thumb { height: 120px; }
+      .card-body { padding: 18px; }
     }
 
     /* ── Card ── */
@@ -427,6 +444,21 @@
 
     .footer a:hover {
       text-decoration: underline;
+    }
+
+    /* ── Print ── */
+    @media print {
+      @page { size: A4; margin: 20mm; }
+      body { background: white !important; }
+      .nav, .filter-section, .hero .stat-pills { display: none !important; }
+      .hero { margin-top: 0; padding: 40px 20px; }
+      .hero::before, .hero::after { display: none !important; }
+      .card-grid { grid-template-columns: 1fr 1fr !important; gap: 16px !important; }
+      .hub-card { break-inside: avoid; box-shadow: none !important; border: 1px solid #ddd !important; }
+      .hub-card.card-hidden { display: flex !important; opacity: 1 !important; position: relative !important; visibility: visible !important; transform: none !important; pointer-events: auto !important; }
+      .card-thumb { height: 80px !important; }
+      .footer { display: none !important; }
+      * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
     }
   </style>
 </head>

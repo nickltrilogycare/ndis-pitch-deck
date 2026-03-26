@@ -1633,64 +1633,86 @@
     }
 
     @media (max-width: 768px) {
-      .section-inner {
-        padding: 80px 24px 60px;
-      }
+      /* Nav */
+      .fixed-nav { padding: 10px 20px; }
+      .nav-logo-img { height: 24px; }
+      .nav-subtitle { display: none; }
+      .nav-divider { display: none; }
+      .presenter-btn { font-size: 11px; padding: 5px 12px; }
 
-      .hero-inner {
-        padding: 100px 24px 60px;
-      }
+      /* Sections */
+      .section-inner { padding: 60px 24px 32px; }
+      .section-title { font-size: 22px; }
+      .section-subtitle { font-size: 15px; margin-bottom: 24px; }
 
-      .section-title {
-        font-size: 30px;
-      }
+      /* Hero */
+      .hero-inner { grid-template-columns: 1fr !important; padding: 60px 24px 32px; }
+      .hero-image { display: none; }
+      #hero h1, .hero-text h1 { font-size: 28px; }
 
-      .hero-text h1 {
-        font-size: 32px;
-      }
+      /* Rep intro */
+      .rep-grid { grid-template-columns: 1fr; gap: 24px; text-align: center; }
+      .rep-photo-frame { align-items: center; }
+      .rep-photo { width: 140px; height: 140px; }
+      .rep-name { font-size: 28px; }
+      .rep-creds li { text-align: left; }
 
-      #cta .section-title {
-        font-size: 32px;
-      }
+      /* Discovery */
+      .discovery-layout { grid-template-columns: 1fr !important; }
+      .discovery-photo { max-height: 200px; overflow: hidden; }
 
-      .card-grid,
-      .feature-cards,
-      .comparison-cards,
-      .acq-cards {
-        grid-template-columns: 1fr;
-      }
+      /* Stats */
+      .card-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
+      .stat-number { font-size: 32px; }
+      .stat-label { font-size: 11px; }
+      .stat-card { padding: 20px 12px; }
 
-      .cred-stats {
-        grid-template-columns: repeat(2, 1fr);
-      }
+      /* Credibility */
+      .cred-stats { grid-template-columns: repeat(3, 1fr); gap: 8px; }
+      .cred-stat { padding: 16px 8px; }
+      .feature-cards { grid-template-columns: 1fr; }
 
-      .opportunity-bottom {
-        grid-template-columns: 1fr;
-      }
+      /* Crossover */
+      #crossover .section-inner > div { grid-template-columns: 1fr !important; }
 
-      .stat-number {
-        font-size: 36px;
-      }
+      /* Tables */
+      .skills-table thead th, .revenue-table thead th { padding: 8px 10px; font-size: 9px; }
+      .skills-table tbody td, .revenue-table tbody td { padding: 8px 10px; font-size: 12px; }
 
-      .fixed-nav {
-        padding: 12px 20px;
-      }
+      /* Revenue */
+      .comparison-cards { grid-template-columns: 1fr; }
 
-      .nav-subtitle {
-        display: none;
-      }
+      /* Programme */
+      .pillar-cards { grid-template-columns: 1fr; gap: 16px; }
 
-      .nav-divider {
-        display: none;
-      }
+      /* Acquisition cards */
+      .acq-cards { grid-template-columns: 1fr; }
 
-      .progress-dots {
-        display: none;
-      }
+      /* Timeline */
+      .timeline-grid { grid-template-columns: 1fr; }
+      .timeline-cards { margin-top: 24px; }
 
-      .hero-confidential {
-        left: 24px;
-      }
+      /* CTA */
+      #cta .section-title { font-size: 32px; }
+      .cta-buttons { flex-direction: column; gap: 12px; }
+
+      /* Opportunity */
+      .opportunity-bottom { grid-template-columns: 1fr; }
+
+      /* Progress dots */
+      .progress-dots { display: none; }
+      .slide-counter { font-size: 11px; right: 12px; bottom: 12px; }
+
+      /* Presenter panel */
+      .presenter-panel { width: 100%; right: -100%; }
+      body.presenter-active .deck { margin-right: 0; }
+      body.presenter-active .fixed-nav { right: 0; }
+
+      /* Scroll indicator */
+      .scroll-indicator span { font-size: 10px; }
+
+      /* Confidential badge */
+      .hero-confidential { left: 24px; }
     }
 
     /* ══════════════════════════════════════════
@@ -1910,6 +1932,10 @@
       /* Discovery slide */
       .discovery-layout { grid-template-columns: 1fr !important; gap: 24px !important; }
       .discovery-photo img { max-height: 300px !important; }
+
+      /* Hide presenter panel in print */
+      .presenter-panel { display: none !important; }
+      body.presenter-active .deck { margin-right: 0 !important; }
     }
   </style>
 </head>

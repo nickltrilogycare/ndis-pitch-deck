@@ -370,17 +370,26 @@
     .next-resources a svg { width: 16px; height: 16px; flex-shrink: 0; }
 
     /* ── Responsive ── */
-    @media (max-width: 700px) {
-      .hero { padding: 60px 20px 48px; }
-      .hero h1 { font-size: 32px; }
-      .content { padding: 40px 18px 60px; }
-      h2 { font-size: 24px; }
+    @media (max-width: 768px) {
+      .top-nav { padding: 10px 16px; }
+      .top-nav img { height: 24px; }
+      .hero { padding: 80px 24px 32px; }
+      .hero h1 { font-size: 24px; }
+      .content { padding: 24px 20px 60px; max-width: 100%; }
+      h2 { font-size: 22px; }
+      h3 { font-size: 17px; }
+      table { font-size: 12px; }
+      thead th, tbody td { padding: 8px 10px; }
+      .callout { padding: 16px; }
       .week-card { padding: 24px 20px; }
       .progress-bar { display: none; }
+      .bottom-actions { flex-direction: column; gap: 12px; }
+      .contact-card { padding: 24px 20px; }
     }
 
     /* ── Print ── */
     @media print {
+      @page { size: A4; margin: 20mm; }
       .top-nav, .btn-pdf, .bottom-actions, .next-resources { display: none !important; }
       .hero { margin-top: 0; padding: 40px 20px; }
       .content { padding: 20px 0; }
@@ -388,9 +397,11 @@
       body { font-size: 14px; }
       .week-card { break-inside: avoid; box-shadow: none; border: 1px solid #ccc; }
       .callout { break-inside: avoid; }
+      tr { break-inside: avoid; }
       h2 { break-after: avoid; }
       .bottom-section { border-top: none; margin-top: 24px; padding-top: 0; }
       .progress-bar { display: none; }
+      * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
     }
   </style>
 </head>
@@ -474,7 +485,7 @@
         </li>
         <li>
           <div class="checkbox"></div>
-          <span class="check-text">Read the <strong>Getting Started Guide</strong></span>
+          <span class="check-text">Read the <strong><a href="getting-started.html" style="color:var(--teal);">Getting Started Guide</a></strong></span>
         </li>
       </ul>
     </div>
@@ -491,7 +502,7 @@
       <ul class="checklist">
         <li>
           <div class="checkbox"></div>
-          <span class="check-text">Read <strong>Support at Home Explained</strong> guide</span>
+          <span class="check-text">Read <strong><a href="sah-explained.html" style="color:var(--teal);">Support at Home Explained</a></strong> guide</span>
         </li>
         <li>
           <div class="checkbox"></div>
@@ -503,11 +514,11 @@
         </li>
         <li>
           <div class="checkbox"></div>
-          <span class="check-text">Read <strong>Roles &amp; Responsibilities</strong> guide</span>
+          <span class="check-text">Read <strong><a href="roles-and-responsibilities.html" style="color:var(--teal);">Roles &amp; Responsibilities</a></strong> guide</span>
         </li>
         <li>
           <div class="checkbox"></div>
-          <span class="check-text">Read <strong>Revenue &amp; Pricing Guide</strong></span>
+          <span class="check-text">Read <strong><a href="revenue-and-pricing.html" style="color:var(--teal);">Revenue &amp; Pricing Guide</a></strong></span>
         </li>
         <li>
           <div class="checkbox"></div>
@@ -544,11 +555,11 @@
         </li>
         <li>
           <div class="checkbox"></div>
-          <span class="check-text">Read <strong>Client Acquisition Playbook</strong></span>
+          <span class="check-text">Read <strong><a href="client-acquisition.html" style="color:var(--teal);">Client Acquisition Playbook</a></strong></span>
         </li>
         <li>
           <div class="checkbox"></div>
-          <span class="check-text">Read <strong>Your Brand in Market</strong> guide</span>
+          <span class="check-text">Read <strong><a href="brand-and-marketing.html" style="color:var(--teal);">Your Brand in Market</a></strong> guide</span>
         </li>
       </ul>
     </div>
