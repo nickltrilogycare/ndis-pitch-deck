@@ -1633,86 +1633,169 @@
     }
 
     @media (max-width: 768px) {
+      /* Disable scroll-snap on mobile — normal scrolling page */
+      body { overflow: auto !important; height: auto !important; }
+      .deck { height: auto !important; overflow: visible !important; scroll-snap-type: none !important; }
+
+      /* Sections become auto-height, not locked viewports */
+      section {
+        height: auto !important;
+        min-height: auto !important;
+        max-height: none !important;
+        scroll-snap-align: none !important;
+        overflow: visible !important;
+        padding: 20px 0;
+      }
+
       /* Nav */
-      .fixed-nav { padding: 10px 20px; }
+      .fixed-nav { padding: 10px 16px; }
       .nav-logo-img { height: 24px; }
       .nav-subtitle { display: none; }
       .nav-divider { display: none; }
-      .presenter-btn { font-size: 11px; padding: 5px 12px; }
+      .presenter-btn { font-size: 10px; padding: 5px 10px; }
 
-      /* Sections */
-      .section-inner { padding: 60px 24px 32px; }
-      .section-title { font-size: 22px; }
-      .section-subtitle { font-size: 15px; margin-bottom: 24px; }
-
-      /* Hero */
-      .hero-inner { grid-template-columns: 1fr !important; padding: 60px 24px 32px; }
-      .hero-image { display: none; }
-      #hero h1, .hero-text h1 { font-size: 28px; }
-
-      /* Rep intro */
-      .rep-grid { grid-template-columns: 1fr; gap: 24px; text-align: center; }
-      .rep-photo-frame { align-items: center; }
-      .rep-photo { width: 140px; height: 140px; }
-      .rep-name { font-size: 28px; }
-      .rep-creds li { text-align: left; }
-
-      /* Discovery */
-      .discovery-layout { grid-template-columns: 1fr !important; }
-      .discovery-photo { max-height: 200px; overflow: hidden; }
-
-      /* Stats */
-      .card-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
-      .stat-number { font-size: 32px; }
-      .stat-label { font-size: 11px; }
-      .stat-card { padding: 20px 12px; }
-
-      /* Credibility */
-      .cred-stats { grid-template-columns: repeat(3, 1fr); gap: 8px; }
-      .cred-stat { padding: 16px 8px; }
-      .feature-cards { grid-template-columns: 1fr; }
-
-      /* Crossover */
-      #crossover .section-inner > div { grid-template-columns: 1fr !important; }
-
-      /* Tables */
-      .skills-table thead th, .revenue-table thead th { padding: 8px 10px; font-size: 9px; }
-      .skills-table tbody td, .revenue-table tbody td { padding: 8px 10px; font-size: 12px; }
-
-      /* Revenue */
-      .comparison-cards { grid-template-columns: 1fr; }
-
-      /* Programme */
-      .pillar-cards { grid-template-columns: 1fr; gap: 16px; }
-
-      /* Acquisition cards */
-      .acq-cards { grid-template-columns: 1fr; }
-
-      /* Timeline */
-      .timeline-grid { grid-template-columns: 1fr; }
-      .timeline-cards { margin-top: 24px; }
-
-      /* CTA */
-      #cta .section-title { font-size: 32px; }
-      .cta-buttons { flex-direction: column; gap: 12px; }
-
-      /* Opportunity */
-      .opportunity-bottom { grid-template-columns: 1fr; }
-
-      /* Progress dots */
+      /* Hide presentation UI */
       .progress-dots { display: none; }
-      .slide-counter { font-size: 11px; right: 12px; bottom: 12px; }
+      .slide-counter { display: none; }
+      .scroll-indicator { display: none; }
+      section::after { display: none; } /* slide numbers */
 
-      /* Presenter panel */
-      .presenter-panel { width: 100%; right: -100%; }
+      /* Presenter panel full width */
+      .presenter-panel { width: 100vw; right: -100vw; }
+      .presenter-panel.open { right: 0; }
       body.presenter-active .deck { margin-right: 0; }
       body.presenter-active .fixed-nav { right: 0; }
+      body.presenter-active .progress-dots { right: auto; }
+      body.presenter-active .slide-counter { right: auto; }
 
-      /* Scroll indicator */
-      .scroll-indicator span { font-size: 10px; }
+      /* Section inner — tighter padding */
+      .section-inner { padding: 48px 20px 32px !important; max-width: 100% !important; }
 
-      /* Confidential badge */
-      .hero-confidential { left: 24px; }
+      /* Typography */
+      .section-title { font-size: 24px !important; line-height: 1.3 !important; }
+      .section-subtitle { font-size: 15px !important; margin-bottom: 20px !important; }
+
+      /* ── HERO ── */
+      .hero-inner {
+        display: flex !important;
+        flex-direction: column !important;
+        padding: 60px 20px 32px !important;
+        gap: 24px;
+      }
+      #hero h1 { font-size: 28px !important; line-height: 1.2 !important; }
+      #hero p { font-size: 15px !important; }
+      .hero-image { order: -1; }
+      .hero-image img { max-height: 200px !important; width: 100% !important; border-radius: 12px !important; }
+      .hero-confidential { font-size: 11px !important; }
+
+      /* ── REP INTRO ── */
+      .rep-grid {
+        grid-template-columns: 1fr !important;
+        gap: 24px !important;
+        text-align: center;
+      }
+      .rep-photo { width: 120px !important; height: 120px !important; }
+      .rep-name { font-size: 26px !important; }
+      .rep-title { font-size: 16px !important; }
+      .rep-creds li { text-align: left; font-size: 15px !important; }
+      .rep-quote { font-size: 16px !important; text-align: left; }
+
+      /* ── DISCOVERY ── */
+      .discovery-layout {
+        grid-template-columns: 1fr !important;
+        gap: 24px !important;
+      }
+      .discovery-photo img { max-height: 200px !important; }
+      .discovery-prompt { font-size: 15px !important; }
+
+      /* ── STAT CARDS (used on multiple slides) ── */
+      .card-grid { grid-template-columns: 1fr 1fr !important; gap: 12px !important; }
+      .stat-number { font-size: 28px !important; }
+      .stat-label { font-size: 11px !important; }
+      .stat-card, .card.stat-card { padding: 16px 12px !important; }
+
+      /* ── CREDIBILITY ── */
+      .cred-stats {
+        grid-template-columns: repeat(3, 1fr) !important;
+        gap: 8px !important;
+      }
+      .cred-stat { padding: 12px 8px !important; }
+      .cred-stat .stat-number { font-size: 22px !important; }
+      .cred-stat .stat-label { font-size: 10px !important; }
+      .feature-grid { grid-template-columns: 1fr !important; gap: 12px !important; }
+      .feature-card { padding: 16px !important; }
+      .feature-card h4 { font-size: 15px !important; }
+      .feature-card p { font-size: 13px !important; }
+      .feature-cards { grid-template-columns: 1fr !important; gap: 12px !important; }
+      .testimonial-card { padding: 20px !important; }
+      .testimonial-card blockquote { font-size: 16px !important; }
+
+      /* ── CROSSOVER ── (uses inline grid style) */
+      #crossover .section-inner > div[style*="grid"] {
+        grid-template-columns: 1fr !important;
+        gap: 16px !important;
+      }
+      #crossover .section-inner > div {
+        grid-template-columns: 1fr !important;
+        gap: 16px !important;
+      }
+      #crossover .card { padding: 16px 18px !important; }
+      #crossover .card h4 { font-size: 14px !important; }
+      #crossover .card p { font-size: 13px !important; line-height: 1.5 !important; }
+
+      /* ── SKILLS TABLE ── */
+      .skills-table-wrapper { margin-bottom: 16px !important; overflow-x: auto !important; }
+      .skills-table { font-size: 12px !important; }
+      .skills-table thead th { padding: 8px !important; font-size: 9px !important; letter-spacing: 0.5px !important; }
+      .skills-table tbody td { padding: 8px !important; font-size: 12px !important; }
+      .skill-pills { gap: 6px !important; }
+      .skill-pill { font-size: 11px !important; padding: 5px 12px !important; }
+      .skills-cta { font-size: 14px !important; }
+
+      /* ── REVENUE TABLE ── */
+      .revenue-table-wrapper { margin-bottom: 16px !important; overflow-x: auto !important; }
+      .revenue-table { font-size: 12px !important; }
+      .revenue-table thead th { padding: 8px !important; font-size: 9px !important; }
+      .revenue-table tbody td { padding: 8px !important; font-size: 12px !important; }
+      .comparison-minis { grid-template-columns: 1fr !important; gap: 12px !important; }
+      .comparison-cards { grid-template-columns: 1fr !important; gap: 12px !important; }
+
+      /* ── CALCULATOR ── */
+      .calculator-embed, iframe { height: 400px !important; }
+
+      /* ── PROGRAMME (teal bg) ── */
+      .pillar-grid { grid-template-columns: 1fr !important; gap: 16px !important; }
+      .pillar-cards { grid-template-columns: 1fr !important; gap: 16px !important; }
+      .pillar-card { padding: 20px !important; }
+      .pillar-card h3 { font-size: 14px !important; }
+      .pillar-card li { font-size: 13px !important; }
+      .programme-footer { padding-top: 16px; }
+      .programme-footer .btn { font-size: 13px !important; padding: 10px 20px !important; }
+
+      /* ── CLIENT ACQUISITION ── */
+      .acq-grid { grid-template-columns: 1fr !important; gap: 16px !important; }
+      .acq-cards { grid-template-columns: 1fr !important; gap: 16px !important; }
+      .acq-card { padding: 20px !important; }
+
+      /* ── TIMELINE ── */
+      .timeline-layout { grid-template-columns: 1fr !important; gap: 24px !important; }
+      .timeline-grid { grid-template-columns: 1fr !important; gap: 24px !important; }
+      .timeline-cards { margin-top: 0 !important; }
+
+      /* ── OPPORTUNITY ── */
+      .opportunity-bottom { grid-template-columns: 1fr !important; }
+
+      /* ── CTA ── */
+      #cta .section-title { font-size: 28px !important; }
+      .cta-subtitle { font-size: 15px !important; }
+      .cta-buttons { flex-direction: column !important; gap: 12px !important; align-items: center; }
+      .cta-btn { width: 100% !important; max-width: 320px; text-align: center; }
+      .urgency-card { padding: 16px 20px !important; }
+      .urgency-card p { font-size: 14px !important; }
+
+      /* ── BUTTONS — ensure all visible ── */
+      .btn { display: inline-block !important; font-size: 14px !important; }
+      a.btn { display: inline-block !important; }
     }
 
     /* ══════════════════════════════════════════
