@@ -400,7 +400,161 @@
     }
 
     /* ══════════════════════════════════════════
-       SECTION 2 — OPPORTUNITY
+       SECTION 2 — REP INTRODUCTION
+    ══════════════════════════════════════════ */
+    #rep-intro { background: var(--white); }
+
+    .rep-grid {
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: 56px;
+      align-items: center;
+    }
+
+    .rep-photo-frame {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .rep-photo {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid var(--teal);
+      box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+      background: var(--light-teal-bg);
+    }
+
+    .rep-name {
+      font-family: var(--font-heading);
+      font-size: 36px;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 4px;
+      line-height: 1.2;
+    }
+
+    .rep-title {
+      font-family: var(--font-heading);
+      font-size: 20px;
+      font-weight: 500;
+      font-style: italic;
+      color: var(--teal);
+      margin-bottom: 24px;
+    }
+
+    .rep-creds {
+      list-style: none;
+      padding: 0;
+      margin-bottom: 28px;
+    }
+
+    .rep-creds li {
+      padding: 8px 0 8px 28px;
+      position: relative;
+      font-size: 17px;
+      color: var(--charcoal);
+      line-height: 1.5;
+    }
+
+    .rep-creds li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 16px;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--teal);
+    }
+
+    .rep-quote {
+      font-family: var(--font-heading);
+      font-size: 18px;
+      font-style: italic;
+      color: var(--slate);
+      line-height: 1.6;
+      border-left: 4px solid var(--teal);
+      padding-left: 24px;
+    }
+
+    /* ══════════════════════════════════════════
+       SECTION 3 — DISCOVERY
+    ══════════════════════════════════════════ */
+    #discovery { background: var(--light-teal-bg); }
+
+    .discovery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .discovery-card {
+      background: var(--white);
+      border-radius: 16px;
+      padding: 28px 24px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+      transition: all 0.3s ease;
+      cursor: default;
+    }
+
+    .discovery-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+    }
+
+    .discovery-icon {
+      font-size: 32px;
+      margin-bottom: 12px;
+      display: block;
+    }
+
+    .discovery-question {
+      font-family: var(--font-heading);
+      font-size: 17px;
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: 8px;
+      line-height: 1.4;
+    }
+
+    .discovery-hint {
+      font-size: 13px;
+      color: var(--teal);
+      font-style: italic;
+      line-height: 1.4;
+    }
+
+    /* ══════════════════════════════════════════
+       PRESENTER BUTTON
+    ══════════════════════════════════════════ */
+    .presenter-btn {
+      font-family: var(--font-body);
+      font-size: 13px;
+      font-weight: 600;
+      padding: 6px 16px;
+      border-radius: 6px;
+      border: none;
+      background: var(--teal);
+      color: var(--white);
+      cursor: pointer;
+      transition: all 0.2s;
+      letter-spacing: 0.5px;
+    }
+
+    .presenter-btn:hover {
+      background: var(--navy);
+    }
+
+    .presenter-btn.active {
+      background: var(--coral);
+    }
+
+    /* ══════════════════════════════════════════
+       SECTION 4 — OPPORTUNITY
     ══════════════════════════════════════════ */
     #opportunity {
       background: var(--light-teal-bg);
@@ -484,7 +638,7 @@
     }
 
     /* ══════════════════════════════════════════
-       SECTION 3 — CREDIBILITY
+       SECTION 5 — CREDIBILITY
     ══════════════════════════════════════════ */
     #credibility {
       background: var(--white);
@@ -569,7 +723,7 @@
     }
 
     /* ══════════════════════════════════════════
-       SECTION 4 — SKILLS TRANSFER
+       SECTION 7 — SKILLS TRANSFER
     ══════════════════════════════════════════ */
     #skills {
       background: var(--light-blue-bg);
@@ -641,7 +795,7 @@
     }
 
     /* ══════════════════════════════════════════
-       SECTION 5 — REVENUE
+       SECTION 8 — REVENUE
     ══════════════════════════════════════════ */
     #revenue {
       background: var(--white);
@@ -731,7 +885,7 @@
     }
 
     /* ══════════════════════════════════════════
-       SECTION 6 — CALCULATOR
+       SECTION 9 — CALCULATOR
     ══════════════════════════════════════════ */
     #calculator {
       background: var(--light-blue-bg);
@@ -768,7 +922,7 @@
     }
 
     /* ══════════════════════════════════════════
-       SECTION 7 — PROGRAMME (TEAL)
+       SECTION 10 — PROGRAMME (TEAL)
     ══════════════════════════════════════════ */
     #programme {
       background: var(--teal);
@@ -871,7 +1025,7 @@
     }
 
     /* ══════════════════════════════════════════
-       SECTION 8 — CLIENT ACQUISITION
+       SECTION 11 — CLIENT ACQUISITION
     ══════════════════════════════════════════ */
     #acquisition {
       background: var(--white);
@@ -950,7 +1104,7 @@
     }
 
     /* ══════════════════════════════════════════
-       SECTION 9 — TIMELINE
+       SECTION 12 — TIMELINE
     ══════════════════════════════════════════ */
     #timeline {
       background: var(--light-teal-bg);
@@ -1104,7 +1258,7 @@
     }
 
     /* ══════════════════════════════════════════
-       SECTION 10 — CTA
+       SECTION 13 — CTA
     ══════════════════════════════════════════ */
     #cta {
       background: linear-gradient(135deg, var(--navy) 0%, var(--navy-dark) 100%);
@@ -1360,6 +1514,8 @@
       .slide-counter,
       .scroll-indicator,
       section::after,
+      #presenterBtn,
+      .presenter-btn,
       button[onclick="window.print()"] {
         display: none !important;
         visibility: hidden !important;
@@ -1511,6 +1667,13 @@
       .btn {
         display: none !important;
       }
+
+      /* Rep intro slide */
+      #rep-intro .rep-photo { width: 120px !important; height: 120px !important; }
+
+      /* Discovery slide */
+      #discovery .discovery-grid { grid-template-columns: repeat(3, 1fr) !important; gap: 12px !important; }
+      #discovery .discovery-card { padding: 14px !important; }
     }
   </style>
 </head>
@@ -1523,11 +1686,14 @@
       <div class="nav-divider"></div>
       <span class="nav-subtitle">Coordination Partner Programme</span>
     </div>
+    <button class="presenter-btn" id="presenterBtn" title="Open presenter notes (P)">Present</button>
   </nav>
 
   <!-- ── Progress Dots ── -->
   <div class="progress-dots" id="progressDots">
-    <button class="progress-dot active" data-section="hero" title="Hero"></button>
+    <button class="progress-dot active" data-section="hero" title="Title"></button>
+    <button class="progress-dot" data-section="rep-intro" title="Introduction"></button>
+    <button class="progress-dot" data-section="discovery" title="Discovery"></button>
     <button class="progress-dot" data-section="opportunity" title="Opportunity"></button>
     <button class="progress-dot" data-section="credibility" title="Credibility"></button>
     <button class="progress-dot" data-section="crossover" title="Industry Crossover"></button>
@@ -1540,7 +1706,7 @@
     <button class="progress-dot" data-section="cta" title="Get Started"></button>
   </div>
 
-  <div class="slide-counter" id="slideCounter">1 / 11</div>
+  <div class="slide-counter" id="slideCounter">1 / 13</div>
 
   <div class="deck" id="deck">
 
@@ -1571,9 +1737,77 @@
   </section>
 
   <!-- ══════════════════════════════════════════════════
-       SECTION 2 — THE OPPORTUNITY
+       SECTION 2 — REP INTRODUCTION
   ══════════════════════════════════════════════════ -->
-  <section id="opportunity" data-slide-num="02">
+  <section id="rep-intro" data-slide-num="02">
+    <div class="section-inner">
+      <div class="rep-grid">
+        <div class="rep-photo-frame">
+          <img id="repPhoto" class="rep-photo" src="https://images.pexels.com/photos/3184611/pexels-photo-3184611.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Your Partnership Contact">
+          <span class="pill pill-teal" style="font-size:10px;">YOUR PARTNERSHIP CONTACT</span>
+        </div>
+        <div>
+          <h2 class="rep-name" id="repName">Jay Parekh</h2>
+          <p class="rep-title" id="repTitle">Partnership Manager — Trilogy Care</p>
+          <ul class="rep-creds" id="repCreds">
+            <li>Experienced in aged care partnership development</li>
+            <li>Works with 50+ Coordination Partners nationally</li>
+            <li>Your single point of contact throughout the journey</li>
+          </ul>
+          <p class="rep-quote" id="repQuote">"I'm not here to sell you anything. I'm here to see if this makes sense for your business — and if it does, to make sure you hit the ground running."</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════
+       SECTION 3 — DISCOVERY MODE
+  ══════════════════════════════════════════════════ -->
+  <section id="discovery" data-slide-num="03">
+    <div class="section-inner">
+      <span class="pill pill-teal" style="margin-bottom:12px;">DISCOVERY</span>
+      <h2 class="section-title">Before We Go Further — Tell Me About You</h2>
+      <p class="section-subtitle">This works best as a conversation, not a presentation</p>
+
+      <div class="discovery-grid">
+        <div class="discovery-card">
+          <span class="discovery-icon">&#x1F4BC;</span>
+          <div class="discovery-question">How's your business going right now?</div>
+          <div class="discovery-hint">Understanding their current state and satisfaction level</div>
+        </div>
+        <div class="discovery-card">
+          <span class="discovery-icon">&#x1F4CA;</span>
+          <div class="discovery-question">Do you feel like there's a cap on what you can earn?</div>
+          <div class="discovery-hint">Opens the revenue ceiling conversation</div>
+        </div>
+        <div class="discovery-card">
+          <span class="discovery-icon">&#x1F465;</span>
+          <div class="discovery-question">What does your current client base look like?</div>
+          <div class="discovery-hint">Identifies warm-market potential</div>
+        </div>
+        <div class="discovery-card">
+          <span class="discovery-icon">&#x1F3E2;</span>
+          <div class="discovery-question">Is it just you, or do you have a team?</div>
+          <div class="discovery-hint">Sizes the opportunity — solo vs practice</div>
+        </div>
+        <div class="discovery-card">
+          <span class="discovery-icon">&#x1F525;</span>
+          <div class="discovery-question">What's the most frustrating part of running your business?</div>
+          <div class="discovery-hint">Surfaces admin burden, audits, rate freeze pain</div>
+        </div>
+        <div class="discovery-card">
+          <span class="discovery-icon">&#x1F680;</span>
+          <div class="discovery-question">Where do you want to be in 12 months?</div>
+          <div class="discovery-hint">Anchors the "secure your future" framing</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════
+       SECTION 4 — THE OPPORTUNITY
+  ══════════════════════════════════════════════════ -->
+  <section id="opportunity" data-slide-num="04">
     <div class="section-inner">
       <h2 class="section-title">Aged Care Is Australia's Fastest-Growing Sector</h2>
       <p class="section-subtitle">The market needs people with your exact skills</p>
@@ -1610,9 +1844,9 @@
   </section>
 
   <!-- ══════════════════════════════════════════════════
-       SECTION 3 — TRILOGY CREDIBILITY
+       SECTION 5 — TRILOGY CREDIBILITY
   ══════════════════════════════════════════════════ -->
-  <section id="credibility" data-slide-num="03">
+  <section id="credibility" data-slide-num="05">
     <div class="section-inner">
       <h2 class="section-title">Who's Behind This</h2>
       <p class="section-subtitle">Trilogy Care &mdash; Australia's fastest-growing Support at Home provider</p>
@@ -1665,9 +1899,9 @@
   </section>
 
   <!-- ══════════════════════════════════════════════════
-       SECTION 4 — INDUSTRY CROSSOVER
+       SECTION 6 — INDUSTRY CROSSOVER
   ══════════════════════════════════════════════════ -->
-  <section id="crossover" data-slide-num="04" style="background: var(--white);">
+  <section id="crossover" data-slide-num="06" style="background: var(--white);">
     <div class="section-inner">
       <h2 class="section-title">Two Industries, One Skillset</h2>
       <p class="section-subtitle">NDIS and aged care are closer than you think</p>
@@ -1715,9 +1949,9 @@
   </section>
 
   <!-- ══════════════════════════════════════════════════
-       SECTION 5 — SKILLS TRANSFER
+       SECTION 7 — SKILLS TRANSFER
   ══════════════════════════════════════════════════ -->
-  <section id="skills" data-slide-num="05">
+  <section id="skills" data-slide-num="07">
     <div class="section-inner">
       <h2 class="section-title">You Already Have the Skills</h2>
       <p class="section-subtitle">Aged care coordination = Level 1 Support Coordination</p>
@@ -1778,9 +2012,9 @@
   </section>
 
   <!-- ══════════════════════════════════════════════════
-       SECTION 5 — REVENUE OPPORTUNITY
+       SECTION 8 — REVENUE OPPORTUNITY
   ══════════════════════════════════════════════════ -->
-  <section id="revenue" data-slide-num="06">
+  <section id="revenue" data-slide-num="08">
     <div class="section-inner">
       <h2 class="section-title">The Revenue Opportunity</h2>
       <p class="section-subtitle">What if you earned more than your NDIS revenue &mdash; with half the complexity?</p>
@@ -1842,9 +2076,9 @@
   </section>
 
   <!-- ══════════════════════════════════════════════════
-       SECTION 6 — CALCULATOR
+       SECTION 9 — CALCULATOR
   ══════════════════════════════════════════════════ -->
-  <section id="calculator" data-slide-num="07">
+  <section id="calculator" data-slide-num="09">
     <div class="section-inner">
       <h2 class="section-title">Model Your Own Numbers</h2>
       <p class="section-subtitle">Interactive calculator &mdash; project your 24-month revenue</p>
@@ -1860,9 +2094,9 @@
   </section>
 
   <!-- ══════════════════════════════════════════════════
-       SECTION 7 — THE PROGRAMME
+       SECTION 10 — THE PROGRAMME
   ══════════════════════════════════════════════════ -->
-  <section id="programme" data-dark data-slide-num="08">
+  <section id="programme" data-dark data-slide-num="10">
     <div class="section-inner">
       <h2 class="section-title">The Coordination Partner Programme</h2>
       <p class="section-subtitle">A partnership &mdash; not a job, not an acquisition</p>
@@ -1914,9 +2148,9 @@
   </section>
 
   <!-- ══════════════════════════════════════════════════
-       SECTION 8 — CLIENT ACQUISITION
+       SECTION 11 — CLIENT ACQUISITION
   ══════════════════════════════════════════════════ -->
-  <section id="acquisition" data-slide-num="09">
+  <section id="acquisition" data-slide-num="11">
     <div class="section-inner">
       <h2 class="section-title">How You Build Your Client Base</h2>
       <p class="section-subtitle">Dedicated support, proven playbooks, and your existing network</p>
@@ -1961,9 +2195,9 @@
   </section>
 
   <!-- ══════════════════════════════════════════════════
-       SECTION 9 — TIMELINE
+       SECTION 12 — TIMELINE
   ══════════════════════════════════════════════════ -->
-  <section id="timeline" data-slide-num="10">
+  <section id="timeline" data-slide-num="12">
     <div class="section-inner">
       <h2 class="section-title">From Handshake to First Client in 4 Weeks</h2>
       <p class="section-subtitle">You coordinate care. Trilogy handles everything else.</p>
@@ -2025,9 +2259,9 @@
   </section>
 
   <!-- ══════════════════════════════════════════════════
-       SECTION 10 — CTA
+       SECTION 13 — CTA
   ══════════════════════════════════════════════════ -->
-  <section id="cta" data-dark data-slide-num="11">
+  <section id="cta" data-dark data-slide-num="13">
     <div class="section-inner">
       <h2 class="section-title">Book Your Discovery Call</h2>
       <p class="cta-subtitle">In 30 minutes, you'll know exactly what your aged care revenue could look like &mdash; and whether this partnership makes sense.</p>
@@ -2070,51 +2304,265 @@
       const sections = deck.querySelectorAll('section');
       const counter = document.getElementById('slideCounter');
       const total = sections.length;
+      let presenterWin = null;
+      const channel = new BroadcastChannel('deck-presenter');
+
+      // ── Presenter Notes Data ──
+      const NOTES = {
+        'hero': {
+          title: 'Title Slide',
+          talking: [
+            'Thanks for making the time. I know your calendar is packed.',
+            'Frame as exploration: "I want to show you something a lot of NDIS coordinators are doing, and see if it makes sense for you."',
+            'Point to the three proof pills: Support at Home, 300+ Partners, $500M+ funding.',
+            '"This isn\'t about leaving NDIS. It\'s about adding a second revenue stream alongside it."'
+          ],
+          questions: [
+            'How did you hear about Trilogy Care?',
+            'What made you take this meeting today?'
+          ],
+          doNot: ['Don\'t bash NDIS or say "NDIS is dying"', 'Don\'t use jargon yet (SaH, FUM, classification)'],
+          personas: ['All']
+        },
+        'rep-intro': {
+          title: 'Introduction',
+          talking: [
+            'Introduce yourself warmly. First name. Something personal.',
+            'Mirror back what they said about why they took the meeting.',
+            'Position as guide, not salesperson: "My role is to help you figure out if this makes sense."',
+            'Mention how many partners you work with in their region.',
+            'SPEND TIME HERE. Rapport now determines the rest of the meeting.'
+          ],
+          questions: [
+            'Tell me about your background \u2014 how did you get into NDIS coordination?',
+            'How long have you been running your own practice?'
+          ],
+          doNot: ['Don\'t rush past this slide', 'Don\'t make it about Trilogy yet \u2014 make it about them and you'],
+          personas: ['All']
+        },
+        'discovery': {
+          title: 'Discovery Mode',
+          talking: [
+            '"I\'d love to learn about where you\'re at before I show you the details."',
+            'Use the visible cards as guides \u2014 don\'t ask all 6 robotically. Pick 2-3.',
+            'Listen for personas: Admin burden = Brenda. Revenue ceiling = Dave. Purpose = Mia.',
+            'Mirror technique: repeat their key phrases back to them.',
+            'Andrew\'s key insight: "Best meetings are 60% them talking, 40% you."',
+            'Take notes. Reference what they say later: "Remember you mentioned X?"'
+          ],
+          questions: [
+            'Pick 2-3 from the cards on screen',
+            'The big one: "If you could change one thing about your business, what would it be?"'
+          ],
+          doNot: ['Don\'t skip this slide \u2014 it\'s the most important one', 'Don\'t ask questions like a checklist'],
+          personas: ['Diagnose the persona here']
+        },
+        'opportunity': {
+          title: 'The Opportunity',
+          talking: [
+            '$4.2 billion market, growing 28% year on year. Fastest-growing care sector.',
+            '320,000 active recipients \u2014 doubled in 5 years. 88,000 waiting for a provider.',
+            'For Brenda: "Clients who want to be in the system, families are grateful, complexity is lower."',
+            'For Dave: "Smart coordinators are diversifying now before this market gets crowded."',
+            'Government investment: $8.83B in FY24, up 29% YoY.',
+            'Don\'t lead with doom about NDIS. Frame aged care as additive.'
+          ],
+          questions: [
+            'Have you ever had NDIS clients whose parents needed aged care?',
+            'Have you looked at any other diversification options?'
+          ],
+          doNot: ['Don\'t say "NDIS is shrinking"', 'Don\'t overwhelm with stats \u2014 pick 2-3'],
+          personas: ['Dave (diversification)', 'Brenda (easier work)', 'Mia (impact)']
+        },
+        'credibility': {
+          title: 'Who\'s Behind This',
+          talking: [
+            '46th to 2nd in KPMG rankings in 2 years \u2014 fastest growth ever tracked.',
+            'Only top-10 provider at 100% coordination. No conflict of interest.',
+            '300+ coordinators from non-aged-care backgrounds already do this.',
+            '$500M+ in funding under management. This isn\'t a startup.',
+            'Read the testimonial. Let it land.'
+          ],
+          questions: [
+            'Have you heard of Trilogy Care before today?',
+            'What would make you trust a new partner like this?'
+          ],
+          doNot: ['Don\'t oversell Trilogy \u2014 let numbers speak', 'Don\'t name competitors'],
+          personas: ['All']
+        },
+        'crossover': {
+          title: 'Industry Crossover',
+          talking: [
+            '"This is the slide that changes most people\'s minds."',
+            'Walk through: Same People, Same Core Work, Same Providers, Same Funding.',
+            'Andrew Wallace: "Nothing in aged care is harder than NDIS."',
+            'Key reframe: "You\'re not learning a new industry. You\'re applying existing skills to a simpler version."',
+            '"The physios, OTs, carers you already work with \u2014 they work across both sectors."'
+          ],
+          questions: [
+            'Does any of this surprise you?',
+            'Have any of your providers mentioned aged care work?'
+          ],
+          doNot: ['Don\'t diminish NDIS expertise \u2014 frame it as "you\'re overqualified"'],
+          personas: ['Brenda (simpler)', 'Dave (easy pivot)', 'Mia (same impact)']
+        },
+        'skills': {
+          title: 'Skills Transfer',
+          talking: [
+            'Walk through the table row by row. Emphasise the Complexity column.',
+            'Killer: "NDIS compliance = 18-month audit. Aged care = 45-minute phone call."',
+            '"No behaviour support. No restrictive practices. No SIL."',
+            '"300+ coordinators from non-aged-care backgrounds are doing this."',
+            'Families are the primary contact \u2014 they\'re grateful and cooperative.'
+          ],
+          questions: [
+            'Looking at this table, does anything feel like a stretch?',
+            'What\'s your current compliance burden like?'
+          ],
+          doNot: ['Don\'t make it sound too easy \u2014 "simpler, not simple"'],
+          personas: ['Brenda (less complexity)', 'Dave (low barrier)']
+        },
+        'revenue': {
+          title: 'Revenue \u2014 THE KILLER SLIDE',
+          talking: [
+            'SPEND TIME HERE. This is the showstopper.',
+            '"In NDIS, you\'re capped at ~$120K. That\'s your ceiling."',
+            '"At 50 aged care clients: $188K-$282K. That\'s 50-135% ABOVE the ceiling."',
+            '"No cap. No rate freeze. Growing 28% a year."',
+            'For Dave: "At 100 clients \u2014 $377K to $565K. 3-5x your NDIS ceiling."',
+            '"And you can do both at the same time."'
+          ],
+          questions: [
+            'Where are you at with your NDIS revenue? Close to the ceiling?',
+            'What would an extra $90K-$150K a year mean for your business?'
+          ],
+          doNot: ['Don\'t guarantee specific income \u2014 use "potential"', 'Don\'t skip the comparison cards'],
+          personas: ['Dave (primary)', 'Brenda (escape grind)', 'Mia (sustainable income)']
+        },
+        'calculator': {
+          title: 'Interactive Calculator',
+          talking: [
+            '"Let\'s make this real. Let me plug in your numbers."',
+            'Use it live \u2014 input their likely starting client count (5-10).',
+            'Show the 24-month compounding effect.',
+            '"Most partners start with 5-10 clients from warm market in first 3 months."',
+            'If they mentioned a team: model the team scenario.'
+          ],
+          questions: [
+            'How many clients could you realistically start with in Q1?',
+            'Do you have contacts who might need aged care coordination?'
+          ],
+          doNot: ['Don\'t fumble the calculator \u2014 practice beforehand', 'Talk while iframe loads'],
+          personas: ['All \u2014 personalise inputs']
+        },
+        'programme': {
+          title: 'The Programme',
+          talking: [
+            'Three columns: Keep, Gain, Goes Away.',
+            'KEEP: "Your business, clients, independence, brand. Partnership, not a job."',
+            'GAIN: "Registration, Partnership Manager (that\'s me), automatic payments, training."',
+            'GONE: "No plan manager chasing, no audit prep, no rate freeze anxiety."',
+            'Jay\'s point: Emphasise PM role. "I\'m here for the long term."',
+            'Tiers: Bronze \u2192 Platinum as portfolio grows.'
+          ],
+          questions: [
+            'What jumps out from the "Goes Away" column?',
+            'Anything in "Keep" that\'s particularly important to you?'
+          ],
+          doNot: ['Don\'t gloss over Keep \u2014 they need to feel they maintain control', 'Don\'t say "work for Trilogy"'],
+          personas: ['Brenda (admin relief)', 'Dave (growth)', 'Mia (independence)']
+        },
+        'acquisition': {
+          title: 'Client Acquisition',
+          talking: [
+            'Jay\'s 3-step framework: Warm Market, Community Outreach, Events.',
+            '"Step 1 is the easiest. You already have 20+ warm leads."',
+            '"Your NDIS clients\' parents. One email to your therapist network."',
+            '"Step 2: Hospital discharge units. They\'re desperate for coordinators."',
+            '"Step 3: Retirement villages, RSLs, seniors groups."',
+            '"You\'re not starting from zero. You\'re starting from your network."'
+          ],
+          questions: [
+            'When I mentioned NDIS clients\' parents \u2014 did anyone come to mind?',
+            'Do you have relationships with any hospitals or GP practices?'
+          ],
+          doNot: ['Don\'t make it sound effortless \u2014 be honest it takes work', 'Don\'t skip warm market angle'],
+          personas: ['Dave (systematic)', 'Brenda (warm market)', 'Mia (community)']
+        },
+        'timeline': {
+          title: 'Timeline \u2014 4 Weeks',
+          talking: [
+            '"Handshake to first client in 4 weeks. Standard, not aspirational."',
+            'Walk through: Discovery Call \u2192 Price Book \u2192 Onboarding \u2192 Go Live.',
+            'Starter pack: playbook, brochures, templates, fee schedule.',
+            '"Day to day: you coordinate, Trilogy claims, you get paid monthly."',
+            'If hesitant, ACE framework: Acknowledge \u2192 Clarify \u2192 Evidence.'
+          ],
+          questions: [
+            'Does 4 weeks feel realistic for your situation?',
+            'What would need to be true for you to feel ready?'
+          ],
+          doNot: ['Don\'t pressure \u2014 if they need time, offer a follow-up'],
+          personas: ['All']
+        },
+        'cta': {
+          title: 'Close \u2014 Discovery Call',
+          talking: [
+            'Reference their earlier answers: "Based on what you told me..."',
+            'Mirror: "You mentioned [X pain point]. This addresses that by [Y]."',
+            '"Next step: 30-min discovery call to dig into your specific numbers."',
+            'Urgency without pressure: "Coordinators joining now build portfolio before it gets crowded."',
+            'Ask: "On a scale of 1-10, how interested are you?"',
+            'Then: "What would make this a 10?"'
+          ],
+          questions: [
+            'What\'s your biggest remaining question?',
+            'On a scale of 1-10, how interested are you?',
+            'What would make this a 10?'
+          ],
+          doNot: ['Don\'t end without a clear next step \u2014 book the call', 'If it\'s a 3: "Thanks, I\'ll send info, reach out when ready"'],
+          personas: ['Brenda = "imagine the relief"', 'Dave = "imagine the revenue"', 'Mia = "imagine the impact"']
+        }
+      };
 
       function getCurrentSlide() {
         return Math.round(deck.scrollTop / window.innerHeight);
       }
 
-      // Nav scroll effect + active dot + counter
       function updateState() {
         const idx = getCurrentSlide();
         const current = sections[idx];
         const isDark = current?.hasAttribute('data-dark');
+        const currentId = current?.id;
 
         // Nav
-        if (idx > 0) {
-          nav.classList.add('scrolled');
-        } else {
-          nav.classList.remove('scrolled');
-        }
+        if (idx > 0) nav.classList.add('scrolled');
+        else nav.classList.remove('scrolled');
 
         // Dots
-        const currentId = current?.id;
-        dots.forEach(dot => {
-          dot.classList.toggle('active', dot.dataset.section === currentId);
-        });
+        dots.forEach(dot => dot.classList.toggle('active', dot.dataset.section === currentId));
 
         // Counter
         counter.textContent = `${idx + 1} / ${total}`;
         counter.classList.toggle('on-dark', isDark);
-
-        // Dot colors on dark slides
         document.querySelector('.progress-dots')?.classList.toggle('on-dark', isDark);
+
+        // Sync presenter
+        if (presenterWin && !presenterWin.closed) {
+          channel.postMessage({ type: 'slideChanged', index: idx, id: currentId });
+        }
       }
 
-      // Throttled scroll handler
+      // Scroll handler
       let ticking = false;
       deck.addEventListener('scroll', () => {
         if (!ticking) {
-          requestAnimationFrame(() => {
-            updateState();
-            ticking = false;
-          });
+          requestAnimationFrame(() => { updateState(); ticking = false; });
           ticking = true;
         }
       });
 
-      // Progress dot click
+      // Dot click
       dots.forEach(dot => {
         dot.addEventListener('click', () => {
           const target = document.getElementById(dot.dataset.section);
@@ -2122,8 +2570,9 @@
         });
       });
 
-      // Keyboard navigation
+      // Keyboard nav
       document.addEventListener('keydown', (e) => {
+        if (e.key === 'p' || e.key === 'P') { e.preventDefault(); togglePresenter(); return; }
         const idx = getCurrentSlide();
         if (['ArrowDown', 'ArrowRight', ' '].includes(e.key)) {
           e.preventDefault();
@@ -2134,10 +2583,162 @@
         }
       });
 
-      // PDF download
+      // Receive navigation from presenter popup
+      channel.addEventListener('message', (e) => {
+        if (e.data.type === 'navigateTo') {
+          sections[e.data.index]?.scrollIntoView({ behavior: 'smooth' });
+        }
+      });
+
+      // Presenter mode
+      function togglePresenter() {
+        if (presenterWin && !presenterWin.closed) {
+          presenterWin.close();
+          presenterWin = null;
+          document.getElementById('presenterBtn')?.classList.remove('active');
+        } else {
+          openPresenter();
+        }
+      }
+
+      function openPresenter() {
+        presenterWin = window.open('', 'presenterNotes', 'width=480,height=720,left=50,top=50,scrollbars=yes');
+        if (!presenterWin) { alert('Please allow popups for presenter mode.'); return; }
+        document.getElementById('presenterBtn')?.classList.add('active');
+
+        presenterWin.document.write(`<!DOCTYPE html><html><head>
+          <title>Presenter Notes</title>
+          <link href="https://fonts.googleapis.com/css2?family=Roboto+Flex:wght@400;500;600;700&family=Roboto+Serif:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+          <style>
+            * { margin:0; padding:0; box-sizing:border-box; }
+            body { font-family:'Roboto Flex',system-ui,sans-serif; background:#0f2440; color:#E1EEFA; font-size:14px; line-height:1.6; padding:0; }
+            .header { background:#1F3B63; padding:12px 20px; display:flex; justify-content:space-between; align-items:center; position:sticky; top:0; z-index:10; border-bottom:2px solid #027F7E; }
+            .header h1 { font-size:13px; font-weight:600; letter-spacing:1.5px; text-transform:uppercase; color:#43C0BE; }
+            .header .close { background:none; border:none; color:#E07B5E; font-size:18px; cursor:pointer; padding:4px 8px; }
+            .slide-indicator { background:#1F3B63; padding:16px 20px; border-bottom:1px solid rgba(255,255,255,0.1); }
+            .slide-num { font-size:12px; color:#43C0BE; letter-spacing:1px; text-transform:uppercase; font-weight:600; }
+            .slide-title { font-family:'Roboto Serif',serif; font-size:22px; font-weight:700; color:#fff; margin-top:4px; }
+            .section { padding:16px 20px; border-bottom:1px solid rgba(255,255,255,0.06); }
+            .section-label { font-size:11px; font-weight:600; letter-spacing:1.5px; text-transform:uppercase; margin-bottom:10px; }
+            .section-label.talk { color:#43C0BE; }
+            .section-label.ask { color:#D4A537; }
+            .section-label.donot { color:#E07B5E; }
+            .section-label.persona { color:#999; }
+            ul { list-style:none; padding:0; }
+            li { padding:6px 0 6px 16px; position:relative; font-size:13px; line-height:1.5; }
+            li::before { content:''; position:absolute; left:0; top:12px; width:6px; height:6px; border-radius:50%; }
+            .talk li::before { background:#43C0BE; }
+            .ask li::before { background:#D4A537; }
+            .donot li::before { background:#E07B5E; }
+            .persona-pills { display:flex; gap:6px; flex-wrap:wrap; }
+            .persona-pill { font-size:11px; padding:3px 10px; border-radius:20px; background:rgba(255,255,255,0.1); color:#ccc; }
+            .nav-btns { display:flex; gap:8px; padding:12px 20px; position:sticky; bottom:0; background:#0f2440; border-top:1px solid rgba(255,255,255,0.1); }
+            .nav-btn { flex:1; padding:10px; border:1px solid rgba(255,255,255,0.2); background:none; color:#fff; border-radius:8px; cursor:pointer; font-size:13px; font-weight:500; transition:all 0.2s; }
+            .nav-btn:hover { background:rgba(255,255,255,0.1); }
+          </style>
+        </head><body>
+          <div class="header">
+            <h1>Presenter Notes</h1>
+            <button class="close" onclick="window.close()">&#10005;</button>
+          </div>
+          <div id="content"></div>
+          <div class="nav-btns">
+            <button class="nav-btn" id="prevBtn">\u2190 Previous</button>
+            <button class="nav-btn" id="nextBtn">Next \u2192</button>
+          </div>
+          <script>
+            const ch = new BroadcastChannel('deck-presenter');
+            let currentIdx = 0;
+            const totalSlides = ${total};
+
+            ch.addEventListener('message', (e) => {
+              if (e.data.type === 'slideChanged') {
+                currentIdx = e.data.index;
+                updateNotes(e.data.id);
+              }
+              if (e.data.type === 'notesData') {
+                renderNotes(e.data);
+              }
+            });
+
+            document.getElementById('prevBtn').addEventListener('click', () => {
+              ch.postMessage({ type: 'navigateTo', index: Math.max(0, currentIdx - 1) });
+            });
+            document.getElementById('nextBtn').addEventListener('click', () => {
+              ch.postMessage({ type: 'navigateTo', index: Math.min(totalSlides - 1, currentIdx + 1) });
+            });
+
+            function updateNotes(id) {
+              ch.postMessage({ type: 'requestNotes', id: id, index: currentIdx });
+            }
+
+            function renderNotes(data) {
+              const c = document.getElementById('content');
+              let html = '<div class="slide-indicator"><div class="slide-num">Slide ' + (data.index + 1) + ' of ' + totalSlides + '</div><div class="slide-title">' + data.title + '</div></div>';
+
+              html += '<div class="section talk"><div class="section-label talk">\ud83d\udcac TALKING POINTS</div><ul>';
+              data.talking.forEach(t => html += '<li>' + t + '</li>');
+              html += '</ul></div>';
+
+              html += '<div class="section ask"><div class="section-label ask">\u2753 DISCOVERY QUESTIONS</div><ul>';
+              data.questions.forEach(q => html += '<li>' + q + '</li>');
+              html += '</ul></div>';
+
+              html += '<div class="section donot"><div class="section-label donot">\ud83d\udeab DO NOT</div><ul>';
+              data.doNot.forEach(d => html += '<li>' + d + '</li>');
+              html += '</ul></div>';
+
+              html += '<div class="section"><div class="section-label persona">\ud83d\udc64 PERSONA FIT</div><div class="persona-pills">';
+              data.personas.forEach(p => html += '<span class="persona-pill">' + p + '</span>');
+              html += '</div></div>';
+
+              c.innerHTML = html;
+            }
+
+            // Request initial notes
+            ch.postMessage({ type: 'requestNotes', id: null, index: 0 });
+          <\/script>
+        </body></html>`);
+        presenterWin.document.close();
+
+        // Send initial notes
+        setTimeout(() => {
+          const idx = getCurrentSlide();
+          const id = sections[idx]?.id;
+          sendNotes(id, idx);
+        }, 500);
+      }
+
+      function sendNotes(id, index) {
+        const n = NOTES[id] || { title: 'Unknown', talking: ['No notes'], questions: [], doNot: [], personas: [] };
+        channel.postMessage({ type: 'notesData', ...n, index: index });
+      }
+
+      // Listen for notes requests from popup
+      channel.addEventListener('message', (e) => {
+        if (e.data.type === 'requestNotes') {
+          const idx = e.data.index || getCurrentSlide();
+          const id = e.data.id || sections[idx]?.id;
+          sendNotes(id, idx);
+        }
+      });
+
+      // Also send notes on every slide change
+      deck.addEventListener('scroll', () => {
+        if (presenterWin && !presenterWin.closed) {
+          const idx = getCurrentSlide();
+          const id = sections[idx]?.id;
+          sendNotes(id, idx);
+        }
+      });
+
+      // Present button
+      document.getElementById('presenterBtn')?.addEventListener('click', togglePresenter);
+
+      // PDF
       document.querySelector('.pdf-btn')?.addEventListener('click', () => window.print());
 
-      // Initial state
+      // Initial
       updateState();
     })();
   </script>
