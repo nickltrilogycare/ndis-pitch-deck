@@ -535,22 +535,35 @@
       font-family: var(--font-body);
       font-size: 13px;
       font-weight: 600;
-      padding: 6px 16px;
-      border-radius: 6px;
-      border: none;
+      padding: 8px 20px;
+      border-radius: 8px;
+      border: 2px solid var(--teal);
       background: var(--teal);
       color: var(--white);
       cursor: pointer;
       transition: all 0.2s;
       letter-spacing: 0.5px;
+      text-transform: uppercase;
+      box-shadow: 0 2px 8px rgba(2,127,126,0.3);
     }
 
     .presenter-btn:hover {
       background: var(--navy);
+      border-color: var(--navy);
+      box-shadow: 0 4px 12px rgba(31,59,99,0.3);
+      transform: translateY(-1px);
     }
 
     .presenter-btn.active {
       background: var(--coral);
+      border-color: var(--coral);
+      box-shadow: 0 2px 8px rgba(224,123,94,0.3);
+      animation: pulse 2s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { box-shadow: 0 2px 8px rgba(224,123,94,0.3); }
+      50% { box-shadow: 0 2px 16px rgba(224,123,94,0.5); }
     }
 
     /* ══════════════════════════════════════════
